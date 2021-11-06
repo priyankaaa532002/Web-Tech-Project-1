@@ -43,7 +43,7 @@ h1{
     font-family: 'Alfa Slab One', cursive;
     color: rgb(255, 255, 255);
     font-size: xx-large;
-  box-shadow: 5px 5px 5px 5px #d3d2d2;
+    box-shadow: 5px 5px 5px 5px #d3d2d2;
     text-align: center;
 }
 #main_course_div {
@@ -73,4 +73,24 @@ h1{
     padding: 90px 0;
     box-shadow: 5px 5px 5px 5px #d3d2d2;
     text-align: center;
+}
+
+.special{
+    display: flex;
+    width: 100%;
+    z-index: 1004;
+}
+
+
+#order{
+    margin-left: 18px;
+    font-size: x-large;
+    /* border: solid rgb(35, 99, 43); */
+    padding: 5px;
+    /* width: 500px;
+    border-radius: 2%; */
+}
+h2{
+    color: rgb(35, 99, 43);
+    font-size: 40px;
 }
