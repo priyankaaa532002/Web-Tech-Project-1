@@ -22,5 +22,11 @@
         "rating" : "3",
         "image" : "images/dish-4.png",
         "price" : "100 Rupees"
+    },
+    {
+        "name" : "MOMO",
+        "rating" : "7",
+        "image" : "images/dish-5.png",
+        "price" : "40 Rupees"
     }
 ]
