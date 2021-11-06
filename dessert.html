@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <script type="text/javascript">
-        function showSnacks() {
-            var data_file = "snacks.json";
+        function showdessert() {
+            var data_file = "dessert.json";
             var http_request = new XMLHttpRequest();
             http_request.onreadystatechange = function () {
                 if (http_request.readyState == 4) {
@@ -22,7 +22,7 @@
                             '<span>' + obj[i].price + '</span>' +
                             '  <button>add to cart</button>';
 
-                        document.getElementById('snack').appendChild(div);
+                        document.getElementById('dessert').appendChild(div);
                     }
                 }
             }
@@ -34,10 +34,9 @@
 </head>
 
 <body>
-    <div class="box-container" id="snack">
-
+   DRINKS
+    <div class="box-container" id="dessert">
     </div>
-    <button onclick="showSnacks()">Click me!</button>
+    <button onclick="showdessert()">Click me!</button>
 </body>
-
 </html>
