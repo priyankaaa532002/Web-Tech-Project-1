@@ -2,51 +2,50 @@
     {
         "name" : "Dal Makhani",
         "rating" : "5",
-        "image" : "Dal makhni.jpg",
+        "image" : "images/Dal-makhni.jpg",
         "price" : "120 Rupees"
     },
     {
         "name" : "Dal Tadka",
         "rating" : "5",
-        "image" : "Dal tadka.jpg",
+        "image" : "images/Dal-tadka.jpg",
         "price" : "100 Rupees"
     },
     {
         "name" : "Shahi Paneer",
         "rating" : "5",
-        "image" : "Shahi.jpg",
+        "image" : "images/Shahi.jpg",
         "price" : "100 Rupees"
     },
     {
         "name" : "Paneer Butter Masala",
         "rating" : "3",
-        "image" : "Butter masala.jpg",
+        "image" : "images/Butter-masala.jpg",
         "price" : "110 Rupees"
     },
 
     {
         "name" : "Channa Masala",
         "rating" : "7",
-        "image" : "Chana.jpg",
+        "image" : "images/Chana.jpg",
         "price" : "120 Rupees"
     },
     {
         "name" : "butter Chicken",
         "rating" : "7",
-        "image" : "Butter chicken.jpg",
+        "image" : "images/Butter-chicken.jpg",
         "price" : "180 Rupees"
     },
     {
         "name" : "Missi Roti",
         "rating" : "7",
-        "image" : "Roti.jpg",
+        "image" : "images/Roti.jpg",
         "price" : "30 Rupees"
     },
     {
         "name" : "Butter Naan",
         "rating" : "3",
-        "image" : "Naan.jpg",
+        "image" : "images/Naan.jpg",
         "price" : "35 Rupees"
-    },
-
+    }
 ]

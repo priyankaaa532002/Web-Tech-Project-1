@@ -7,8 +7,8 @@
     <title>Document</title>
 
     <script type="text/javascript">
-        function showSnacks() {
-            var data_file = "Main course.json";
+        function showMain() {
+            var data_file = "mainCourse.json";
             var http_request = new XMLHttpRequest();
             http_request.onreadystatechange = function () {
                 if (http_request.readyState == 4) {
@@ -22,7 +22,7 @@
                             '<span>' + obj[i].price + '</span>' +
                             '  <button>add to cart</button>';
 
-                        document.getElementById('Main course').appendChild(div);
+                        document.getElementById('maincourse').appendChild(div);
                     }
                 }
             }
@@ -34,8 +34,8 @@
 </head>
 <body>
     I'm having breakfast!
-    <div class="box-container" id="snack">
+    <div class="box-container" id="maincourse">
     </div>
-    <button onclick="showSnacks()">Click me!</button>
+    <button onclick="showMain()">Click me!</button>
 </body>
 </html>
