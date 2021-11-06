@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Ordering Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
@@ -27,22 +30,30 @@
 
 <body>
 
-    <div class="header">
-        FOODIES
+
+    <div class="top">
+        <p align="right" >Foodies Paradise, the Best in Town</p>
+        <p align="right">Order Online +919910052888</p>
     </div>
 
-    <h1>MENU</h1>
+    <center>
+        <p id="heading">Foodies Paradise</p>
+    </center>
 
-    <div class="menu">
+
+    <h1 align="center">MENU</h1>
+
+    <div class="menu" align="center">
         <div id="snack_div" onClick="toSnacks()">
-            SNACKS
+            <p style="background-color: rgb(35, 99, 43); font-family: 'Indie Flower', cursive;">SNACKS</p>
         </div>
         <div id="main_course_div" onClick="toMainCourse()">
-            MAIN COURSE
+            <p style="background-color: rgb(35, 99, 43); font-family: 'Indie Flower', cursive;">MAIN COURSE</p>
         </div>
         <div id="drinks_div" onClick="toDrinks()">
-            DRINKS
+            <p style="background-color: rgb(35, 99, 43); font-family: 'Indie Flower', cursive;">DESERTS</p>
         </div>
     </div>
 </body>
+
 </html>
