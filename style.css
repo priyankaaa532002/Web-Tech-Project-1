@@ -10,21 +10,31 @@
     transition: all .2s linear;
 }
 
+
+body{
+    /* background-image: url("https://www.wallpapertip.com/wmimgs/193-1937898_leaves-pattern.jpg"); */
+    /* background-image: url("https://www.wallpapertip.com/wmimgs/25-253667_blue-floral-background-iphone.jpg"); */
+    background-image: url("https://www.wallpapertip.com/wmimgs/38-381879_lime-green-metallic-floral-wallpaper-light-green-wallpaper.jpg");
+}
 h1{
-    font-family: sans-serif;
+    font-family: 'Indie Flower';
     font-size: xx-large;
 }
 .top{
-    background-color: rgb(35, 99, 43);
+    background-color: #0e3013;
     color: rgb(255, 255, 255);
     font-size: large;
     padding-left: 6px;
     width: 100%;
+    position: fixed;
+  bottom: 0;
 }
 
 #heading{
     font-family: 'Sacramento', cursive;
     font-size: 80px;
+    color: #0e3013;
+    font-weight: bold;
 }
 .menu{
     display: flex;
@@ -33,14 +43,13 @@ h1{
 }
 #snack_div {
     background-image: url("images/snackss.jfif");
-    height: 200px;
+    height: 220px;
     width: 500px;
     padding: 5px;
     padding: 90px 0;
     margin: 20px;
     object-fit: fill;
     /* border: 1px solid; */
-    font-family: 'Alfa Slab One', cursive;
     color: rgb(255, 255, 255);
     font-size: xx-large;
     box-shadow: 5px 5px 5px 5px #d3d2d2;
@@ -48,10 +57,9 @@ h1{
 }
 #main_course_div {
     background-image: url("images/main2.jfif");
-    height: 200px;
+    height: 220px;
     width: 500px;
     margin: 20px;
-    font-family: 'Alfa Slab One', cursive;
     color: #fff;
     font-size: xx-large;
     padding: 5px;
@@ -62,14 +70,13 @@ h1{
 }
 #drinks_div {
     background-image: url("images/desert.jfif");
-    height: 200px;
-    color: rgb(35, 99, 43);
+    height: 220px;
+    color: #0e3013;
     width: 500px;
     font-size: xx-large;
     padding: 5px;
     margin: 20px;
     color: #fff;
-    font-family: 'Alfa Slab One', cursive;
     padding: 90px 0;
     box-shadow: 5px 5px 5px 5px #d3d2d2;
     text-align: center;
@@ -85,23 +92,24 @@ h1{
 #order{
     margin-left: 18px;
     font-size: x-large;
-    /* border: solid rgb(35, 99, 43); */
+    /* border: solid #0e3013; */
     padding: 5px;
     /* width: 500px;
     border-radius: 2%; */
 }
 h2{
-    color: rgb(35, 99, 43);
+    color: #0e3013;
     font-size: 40px;
 }
 .box{
-    border: solid rgb(35, 99, 43);
+    border: solid #0e3013;
     border-radius: 2%;
-    width: 600px;
+    width: 700px;
     display: flex;
     padding: 5px;
     margin: 5px;
     font-size:25px;
+    background-color: rgb(173, 202, 160);
 }
 .food_image{
     width: 300px;
@@ -111,9 +119,13 @@ h2{
 }
 .food_name{
     font-size: px;
+    color:#0e3013 ;
 }
+
 .menu_heading{
     font-family: 'Sacramento', cursive;
     font-size: 80px;
     text-align: center;
+    color: #fff;
+    background-color:#0e3013 ;
 }
