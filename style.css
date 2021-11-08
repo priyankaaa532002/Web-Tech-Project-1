@@ -129,3 +129,6 @@ h2{
     color: #fff;
     background-color:#0e3013 ;
 }
+input.ng-invalid.ng-dirty{
+    border-bottom: 2px solid red;
+}

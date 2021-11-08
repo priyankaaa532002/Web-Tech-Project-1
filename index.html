@@ -8,7 +8,9 @@
     <title>Food Ordering Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
@@ -55,15 +57,55 @@
 
     <br>
     <div id="order">
-        
+
         <h2>Order for<br>
-        Home-Delivered Smiles<br></h2>
+            Home-Delivered Smiles<br></h2>
         We deliver to your doorstep
 
         Our Delivery allows you to experience delicious food from the comfort of
         your sofa at home or cubicle in office. All orders are delivered quickly and efficiently,
         allowing you the peace of mind to know that smiles-inducing food is never too far.
     </div>
+
+    <form name="form1" ng-app="myApp" ng-controller="validateCtrl" novalidate>
+        <p>Your Name(required)<br>
+            <input type="text" name="name" ng-model="name" required>
+            <span style="color:red" ng-show="form1.name.$dirty && form1.name.$invalid">
+                <span ng-show="form1.name.$error.required">This field is required</span>
+            </span>
+        </p>
+        <p>Your Phone(required)<br>
+            <input type="text" name="phone" ng-model="phone" ng-pattern="/^\d{10}$/" required>
+            <span style="color:red" ng-show="form1.phone.$dirty && form1.phone.$invalid">
+                <span ng-show="form1.phone.$error.required">This field is required</span>
+                <span ng-show="form1.phone.$error.pattern">Invalid phone</span>
+            </span>
+        </p>
+        <p>address(required)<br><input type="text" name="address" ng-model="address" required>
+            <span style="color:red" ng-show="form1.address.$dirty && form1.address.$invalid">
+                <span ng-show="form1.address.$error.required">This field is required</span>
+            </span>
+        </p>
+        <p>Pin Code<br><input type="text" name="pincode" ng-model="pincode" ng-pattern="/^\d{6}$/">
+            <span style="color:red" ng-show="form1.pincode.$dirty && 
+        form1.pincode.$invalid">
+                <span ng-show="form1.pincode.$error.pattern">Invalid pincode</span>
+            </span>
+        </p>
+        Wanna Donate?
+        Rs 50<input type="radio" name="amount">
+        Rs 100<input type="radio" name="amount"><br>
+        <input type="submit" ng-disabled="form1.phone.$invalid || form1.pincode.$invalid"><br><br><br><br>
+    </form>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('validateCtrl', function ($scope) {
+
+        });
+    </script>
+
+
     <footer class="top">
         <p align="right">Order Online +919910052888</p>
     </footer>
