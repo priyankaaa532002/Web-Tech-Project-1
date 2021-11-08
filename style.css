@@ -10,6 +10,9 @@
     transition: all .2s linear;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
 
 body{
     /* background-image: url("https://www.wallpapertip.com/wmimgs/38-380944_rut-plaid-wallpaper-pale-yellow-and-white-plaid.jpg"); */
