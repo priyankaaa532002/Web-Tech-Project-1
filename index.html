@@ -74,47 +74,7 @@
     </div>
 
     
-    <form id="formm" name="form1" ng-app="myApp" ng-controller="validateCtrl" novalidate align="center">
-        <br><br>
-        <p style="font-size: xx-large; color:#32502E ;">Enter Your Details</p>
-        <br>
-        <p>Your Name(required)&nbsp;&nbsp;&nbsp;
-            <input type="text" name="name" ng-model="name" required>
-            <span style="color:red" ng-show="form1.name.$dirty && form1.name.$invalid">
-                <span ng-show="form1.name.$error.required">This field is required</span>
-            </span>
-        </p> <br>
-        <p>Your Phone(required)&nbsp;&nbsp;&nbsp;   
-            <input type="text" name="phone" ng-model="phone" ng-pattern="/^\d{10}$/" required>
-            <span style="color:red" ng-show="form1.phone.$dirty && form1.phone.$invalid">
-                <span ng-show="form1.phone.$error.required">This field is required</span>
-                <span ng-show="form1.phone.$error.pattern">Invalid phone</span>
-            </span>
-        </p> <br>
-        <p>address(required)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="address" ng-model="address" required>
-            <span style="color:red" ng-show="form1.address.$dirty && form1.address.$invalid">
-                <span ng-show="form1.address.$error.required">This field is required</span>
-            </span>
-        </p> <br>
-        <p>Pin Code&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="pincode" ng-model="pincode" ng-pattern="/^\d{6}$/">
-            <span style="color:red" ng-show="form1.pincode.$dirty && 
-        form1.pincode.$invalid">
-                <span ng-show="form1.pincode.$error.pattern">Invalid pincode</span>
-            </span>
-        </p><br><br>
-        <p style="color:#32502E ;">CONTRIBUTE FOR DONATION</p><br>
-        <P>You can light a little life :)</P>
-        Rs 50<input type="radio" name="amount">
-        Rs 100<input type="radio" name="amount"><br>
-        <input type="submit" ng-disabled="form1.phone.$invalid || form1.pincode.$invalid"><br><br><br><br>
-    </form>
 
-    <script>
-        var app = angular.module('myApp', []);
-        app.controller('validateCtrl', function ($scope) {
-
-        });
-    </script>
 
 
     <footer class="top">
