@@ -165,3 +165,10 @@ input.ng-invalid.ng-dirty{
     border: none;
     padding: 7px;
 }
+
+#formcss{
+    border-style: solid;
+    border-color: #32502E;
+    width: 500px;
+    align-items: center;
+}

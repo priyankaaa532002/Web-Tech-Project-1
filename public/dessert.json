@@ -2,31 +2,31 @@
     {
         "name" : "stawberry cheesecake",
         "rating" : "5",
-        "image" : "images/Chessecake.jpg",
+        "image" : "/Chessecake.jpg",
         "price" : "Price: 300"
     },
     {
         "name" : "Gulab Jamun",
         "rating" : "5",
-        "image" : "images/jamun.jpg",
+        "image" : "/jamun.jpg",
         "price" : "35 Rupees"
     },
     {
         "name" : "Sizzling Brownie",
         "rating" : "5",
-        "image" : "images/Sizzling-Brownie-Recipe-2-640x470.jpg",
+        "image" : "/Sizzling-Brownie-Recipe-2-640x470.jpg",
         "price" : "285 Rupees"
     },
     {
         "name" : "Kesar Badam Kulfi",
         "rating" : "3",
-        "image" : "images/kulfi.jpg",
+        "image" : "/kulfi.jpg",
         "price" : "49 Rupees"
     },
     {
         "name" : "Fruit Cream",
         "rating" : "3",
-        "image" : "images/cream.jpg",
+        "image" : "/cream.jpg",
         "price" : "180 Rupees"
     }
 ]

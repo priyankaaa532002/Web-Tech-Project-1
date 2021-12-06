@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-    </head>
 
-    <body>
-        <form id="formm" name="form1" ng-app="myApp" ng-controller="validateCtrl" novalidate align="center" action="/index.html" method="post">
-            <br><br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script>
+            function toLogin() {
+            window.location.href = "login2.html";
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <p id="heading">Foodies Paradise</p>
+    </center>
+    <br><br>
+    <div id="formcss" style="width:600px; margin:0 auto;">
+        <form id="formm" name="form1" ng-app="myApp" ng-controller="validateCtrl" novalidate align="center"
+            action="/index.html" method="post">
+            <br>
+            <p style="font-size: xx-large; color:#32502E ;">REGISTER HERE</p><BR>
             <p style="font-size: xx-large; color:#32502E ;">Enter Your Details</p>
             <br>
             <p>Your Name(required)&nbsp;&nbsp;&nbsp;
@@ -20,19 +38,34 @@
                     <span ng-show="form1.name.$error.required">This field is required</span>
                 </span>
             </p> <br>
-            <p>Your Phone(required)&nbsp;&nbsp;&nbsp;   
+            <p>Your Password(required)&nbsp;&nbsp;&nbsp;
+                <input type="password" name="name" ng-model="password" required>
+                <span style="color:red" ng-show="form1.name.$dirty && form1.name.$invalid">
+                    <span ng-show="form1.name.$error.required">This field is required</span>
+                </span>
+            </p> <br>
+            <p>Your Phone(required)&nbsp;&nbsp;&nbsp;
                 <input type="text" name="phone" ng-model="phone" ng-pattern="/^\d{10}$/" required>
                 <span style="color:red" ng-show="form1.phone.$dirty && form1.phone.$invalid">
                     <span ng-show="form1.phone.$error.required">This field is required</span>
                     <span ng-show="form1.phone.$error.pattern">Invalid phone</span>
                 </span>
             </p> <br>
-            <p>address(required)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="address" ng-model="address" required>
+            <p>Your Email(required)&nbsp;&nbsp;&nbsp;
+                <input type="email" name="email" ng-model="email" ng-pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" required>
+                <span style="color:red" ng-show="form1.email.$dirty && form1.email.$invalid">
+                    <span ng-show="form1.email.$error.required">This field is required</span>
+                    <span ng-show="form1.email.$error.pattern">Invalid Email</span>
+                </span>
+            </p> <br>
+            <p>address(required)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="address" ng-model="address"
+                    required>
                 <span style="color:red" ng-show="form1.address.$dirty && form1.address.$invalid">
                     <span ng-show="form1.address.$error.required">This field is required</span>
                 </span>
             </p> <br>
-            <p>Pin Code&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="pincode" ng-model="pincode" ng-pattern="/^\d{6}$/">
+            <p>Pin Code&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="pincode" ng-model="pincode"
+                    ng-pattern="/^\d{6}$/">
                 <span style="color:red" ng-show="form1.pincode.$dirty && 
             form1.pincode.$invalid">
                     <span ng-show="form1.pincode.$error.pattern">Invalid pincode</span>
@@ -42,14 +75,17 @@
             <P>You can light a little life :)</P>
             Rs 50<input type="radio" name="amount">
             Rs 100<input type="radio" name="amount"><br>
-            <input type="submit" ng-disabled="form1.phone.$invalid || form1.pincode.$invalid"><br><br><br><br>
+            <input type="submit" ng-disabled="form1.phone.$invalid || form1.pincode.$invalid"><br><br>
+            Already a member? <input type="button" value="Login Here" onclick="toLogin()"> <br><br>
         </form>
-    
-        <script>
-            var app = angular.module('myApp', []);
-            app.controller('validateCtrl', function ($scope) {
-    
-            });
-        </script>
-    </body>
+    </div>
+    <br><br>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('validateCtrl', function ($scope) {
+
+        });
+    </script>
+</body>
+
 </html>
