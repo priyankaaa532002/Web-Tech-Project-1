@@ -1,0 +1,25 @@
+{
+  "name": "web-tech-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyankaaa532002/Web-Tech-Project.git"
+  },
+  "author": "Priyanka Tanishq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/priyankaaa532002/Web-Tech-Project/issues"
+  },
+  "homepage": "https://github.com/priyankaaa532002/Web-Tech-Project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.2.1",
+    "nodemon": "^2.0.15"
+  }
+}
