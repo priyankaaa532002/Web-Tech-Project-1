@@ -8,7 +8,10 @@
     <title>DESSERT</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap" rel="stylesheet">
+
+
     <script type="text/javascript">
+        var arrayOfItem = []
         function showdessert() {
             var data_file = "dessert.json";
             var http_request = new XMLHttpRequest();
@@ -16,6 +19,7 @@
                 if (http_request.readyState == 4) {
                     var obj = JSON.parse(http_request.responseText);
                     for (var i = 0; i < obj.length; i++) {
+                        arrayOfItem[i] = obj[i];
                         var div = document.createElement('div');
                         div.className = 'box';
                         div.innerHTML = '<img class ="food_image" src="' + obj[i].image + '">' +
@@ -23,7 +27,7 @@
                             '<h3 class="food_name">' + obj[i].name + '</h3>' +'</p>' + 
                             '<p class="food_rating"> <br>Rating : ' + obj[i].rating + '</p>' +
                             '<span class="food_price"> Price: ' + obj[i].price + '</span><br><br>' +
-                            '  <button class="food_button">add to cart</button>' + '</div>';
+                            '<button class="food_button" onClick=addToCart(' + i + ') >Add to cart</button>' + '</div>';
 
                         document.getElementById('dessert').appendChild(div);
                     }
@@ -33,6 +37,13 @@
             http_request.send();
         }
 
+        function addToCart(idx) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:9000/addtocart", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(arrayOfItem[idx]));
+            console.log(arrayOfItem[idx]);
+        }
     </script>
 </head>
 

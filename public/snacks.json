@@ -3,7 +3,7 @@
         "name" : "Burger",
         "rating" : "5",
         "image" : "/burr.jpg",
-        "price" : "140 Rupees"
+        "price" : 140
     },
     {
         "name" : "Momos",

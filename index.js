@@ -1,6 +1,5 @@
 var express = require('express');
 const bodyParser = require("body-Parser");
-var mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient
 var url = 'mongodb://localhost:27017/'
 var app = express();
@@ -8,11 +7,31 @@ app.use(express.static("public"));
 app.use(express.static("images"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
+app.use(bodyParser.json());
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/login.html");
 });
+
+
+var alert = require("alert");
+function myFunction() {
+    alert("Hello! I am an alert box!");
+}
+
+app.post("/addtocart",(req,res)=>{
+    const body= req.body;
+    console.log(body);
+
+    MongoClient.connect(url, function(err, db) {
+        if(err) throw err;
+
+        var dbo = db.db("fooddb")
+        dbo.collection("Cart").insertOne(body, function(err, res) {
+            console.log("Item added to cart")
+            db.close()
+        })
+    })
+})
 
 app.post("/register", function (req, res) {
     var name = req.body.name
@@ -57,18 +76,21 @@ app.post("/login", function (req, res) {
             if (err) throw err;
             if(result.length == 0) {
                 console.log("You are not an existing user")
+                res.send("Not a user")
             } else {
                 if(result[0].password != req.body.password) {
                     console.log("Wrong Password")
+                
                 } else{
+                    console.log(result);
                     res.sendFile(__dirname + "/index.html");
                 }
             }
-            console.log(result);
             db.close();
-          });
+        });
     })
 })
+
 app.get("/snacks.html", function (req, res) {
     res.sendFile(__dirname + "/snacks.html");
 });

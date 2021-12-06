@@ -74,12 +74,17 @@ h1{
     padding: 90px 0;
     margin: 20px;
     object-fit: fill;
+    filter: blur(1px);
     /* border: 1px solid; */
     color: rgb(255, 255, 255);
     font-size: xx-large;
     box-shadow: 5px 5px 5px 5px #d3d2d2;
     text-align: center;
 }
+#snack_div:hover {
+    filter: none;
+}
+
 #main_course_div {
     background-image: url("/main2.jfif");
     height: 220px;
