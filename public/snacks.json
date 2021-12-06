@@ -2,33 +2,33 @@
     {
         "name" : "Burger",
         "rating" : "5",
-        "image" : "images/burr.jpg",
+        "image" : "/burr.jpg",
         "price" : "140 Rupees"
     },
     {
         "name" : "Momos",
         "rating" : "5",
-        "image" : "images/momos.jpg",
+        "image" : "/momos.jpg",
         "price" : "80 Rupees"
     },
     {
         "name" : "Chicken nugget",
         "rating" : "3",
-        "image" : "images/nugget.jpg",
+        "image" : "/nugget.jpg",
         "price" : "280 Rupees"
     },
     
     {
         "name" : "Spring roll",
         "rating" : "3",
-        "image" : "images/roll.jpg",
+        "image" : "/roll.jpg",
         "price" : "100 Rupees"
     },
 
     {
         "name" : "arrabiata pasta",
         "rating" : "5",
-        "image" : "images/Arrabiata.jpg",
+        "image" : "/Arrabiata.jpg",
         "price" : "180 Rupees"
     }
 ]
