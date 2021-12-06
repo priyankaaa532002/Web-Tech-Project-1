@@ -1,0 +1,167 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    /* outline: none;
+    border: none; */
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    /* background-image: url("https://www.wallpapertip.com/wmimgs/38-380944_rut-plaid-wallpaper-pale-yellow-and-white-plaid.jpg"); */
+    /* background-image: url("https://www.wallpapertip.com/wmimgs/25-253667_blue-floral-background-iphone.jpg"); */
+    /* background-image: url("https://www.wallpapertip.com/wmimgs/38-381879_lime-green-metallic-floral-wallpaper-light-green-wallpaper.jpg"); */
+    background-image: url("/BACKKGG.png");
+    
+}
+h1{
+    font-family: 'Indie Flower';
+    font-size: xx-large;
+}
+
+.login_head,#login{
+    /* background-color: #96BB7C; */
+    color: #32502E;
+    font-size: large;
+    outline: none;
+    border: none;
+}
+
+#formm{
+    font-size: large;
+}
+#login{
+    background-color: #fff;
+    color: #32502E;
+    font-weight: bold;
+    margin: 2px;
+    padding: 8px;
+}
+
+.top{
+    background-color: #96BB7C;
+    color: #32502E;
+    font-size: large;
+    padding-left: 6px;
+    width: 100%;
+    position: fixed;
+  bottom: 0;
+}
+
+#heading{
+    font-family: 'Sacramento', cursive;
+    font-size: 80px;
+    color: #32502E;
+    font-weight: bold;
+}
+.menu{
+    display: flex;
+    width: 100%;
+    z-index: 1004;
+}
+#snack_div {
+    background-image: url("/snackss.jfif");
+    height: 220px;
+    width: 500px;
+    padding: 5px;
+    padding: 90px 0;
+    margin: 20px;
+    object-fit: fill;
+    /* border: 1px solid; */
+    color: rgb(255, 255, 255);
+    font-size: xx-large;
+    box-shadow: 5px 5px 5px 5px #d3d2d2;
+    text-align: center;
+}
+#main_course_div {
+    background-image: url("/main2.jfif");
+    height: 220px;
+    width: 500px;
+    margin: 20px;
+    color: #fff;
+    font-size: xx-large;
+    padding: 5px;
+    padding: 90px 0;
+    object-fit: contain;
+    box-shadow: 5px 5px 5px 5px #d3d2d2;
+    text-align: center;
+}
+#drinks_div {
+    background-image: url("/desert.jfif");
+    height: 220px;
+    color: #32502E;
+    width: 500px;
+    font-size: xx-large;
+    padding: 5px;
+    margin: 20px;
+    color: #fff;
+    padding: 90px 0;
+    box-shadow: 5px 5px 5px 5px #d3d2d2;
+    text-align: center;
+}
+
+.special{
+    display: flex;
+    width: 100%;
+    z-index: 1004;
+}
+
+
+#order{
+    margin-left: 18px;
+    font-size: x-large;
+    /* border: solid #32502E; */
+    padding: 5px;
+    /* width: 500px;
+    border-radius: 2%; */
+}
+h2{
+    color: #32502E;
+    font-size: 40px;
+}
+.box{
+    border: solid #32502E;
+    border-radius: 2%;
+    width: 700px;
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    font-size:25px;
+    background-color: #c9e7a3;
+    /* rgb(173, 202, 160) */
+}
+.food_image{
+    width: 300px;
+    height: 200px;
+    padding: 5px;
+    margin-right: 100px;
+}
+.food_name{
+    font-size: px;
+    color:#32502E ;
+}
+
+.menu_heading{
+    font-family: 'Sacramento', cursive;
+    font-size: 80px;
+    text-align: center;
+    color: #fff;
+    background-color:#32502E ;
+}
+input.ng-invalid.ng-dirty{
+    border-bottom: 2px solid red;
+}
+
+.food_button{
+    background-color: #ecf4e3;
+    outline: none;
+    border: none;
+    padding: 7px;
+}
