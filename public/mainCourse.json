@@ -3,49 +3,49 @@
         "name" : "Dal Makhani",
         "rating" : "5",
         "image" : "/Dal-makhni.jpg",
-        "price" : "120 Rupees"
+        "price" : 120
     },
     {
         "name" : "Dal Tadka",
         "rating" : "5",
         "image" : "/Dal-tadka.jpg",
-        "price" : "100 Rupees"
+        "price" : 100
     },
     {
         "name" : "Shahi Paneer",
         "rating" : "5",
         "image" : "/Shahi.jpg",
-        "price" : "100 Rupees"
+        "price" : 200
     },
     {
         "name" : "Paneer Butter Masala",
         "rating" : "3",
         "image" : "/Butter-masala.jpg",
-        "price" : "110 Rupees"
+        "price" : 90
     },
 
     {
         "name" : "Channa Masala",
         "rating" : "7",
         "image" : "/Chana.jpg",
-        "price" : "120 Rupees"
+        "price" : 150
     },
     {
         "name" : "butter Chicken",
         "rating" : "7",
         "image" : "/Butter-chicken.jpg",
-        "price" : "180 Rupees"
+        "price" : 180
     },
     {
         "name" : "Missi Roti",
         "rating" : "7",
         "image" : "/Roti.jpg",
-        "price" : "30 Rupees"
+        "price" : 50
     },
     {
         "name" : "Butter Naan",
         "rating" : "3",
         "image" : "/Naan.jpg",
-        "price" : "35 Rupees"
+        "price" : 190
     }
 ]

@@ -9,26 +9,26 @@
         "name" : "Momos",
         "rating" : "5",
         "image" : "/momos.jpg",
-        "price" : "80 Rupees"
+        "price" : 80
     },
     {
         "name" : "Chicken nugget",
         "rating" : "3",
         "image" : "/nugget.jpg",
-        "price" : "280 Rupees"
+        "price" : 240
     },
     
     {
         "name" : "Spring roll",
         "rating" : "3",
         "image" : "/roll.jpg",
-        "price" : "100 Rupees"
+        "price" : 100
     },
 
     {
         "name" : "arrabiata pasta",
         "rating" : "5",
         "image" : "/Arrabiata.jpg",
-        "price" : "180 Rupees"
+        "price" : 300
     }
 ]

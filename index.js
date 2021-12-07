@@ -9,7 +9,7 @@ app.use(express.static("images"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/login.html");
+    res.sendFile(__dirname + "/register.html");
 });
 
 
@@ -17,6 +17,9 @@ var alert = require("alert");
 function myFunction() {
     alert("Hello! I am an alert box!");
 }
+
+var userName = ""
+var userPassword = ""
 
 app.post("/addtocart",(req,res)=>{
     const body= req.body;
@@ -26,7 +29,7 @@ app.post("/addtocart",(req,res)=>{
         if(err) throw err;
 
         var dbo = db.db("fooddb")
-        dbo.collection("Cart").insertOne(body, function(err, res) {
+        dbo.collection("Cart").insertOne({userName, userPassword, body}, function(err, res) {
             console.log("Item added to cart")
             db.close()
         })
@@ -36,6 +39,8 @@ app.post("/addtocart",(req,res)=>{
 app.post("/register", function (req, res) {
     var name = req.body.name
     var password = req.body.password
+    userName = name
+    userPassword = password
     var phone = req.body.phone
     var email = req.body.email
     var address = req.body.address
@@ -82,6 +87,8 @@ app.post("/login", function (req, res) {
                     console.log("Wrong Password")
                 
                 } else{
+                    userName = result[0].name
+                    userPassword = result[0].password
                     console.log(result);
                     res.sendFile(__dirname + "/index.html");
                 }
@@ -93,6 +100,7 @@ app.post("/login", function (req, res) {
 
 app.get("/snacks.html", function (req, res) {
     res.sendFile(__dirname + "/snacks.html");
+    console.log(userName + " " + userPassword)
 });
 
 app.get("/main_course.html", function (req, res) {
@@ -103,10 +111,46 @@ app.get("/dessert.html", function (req, res) {
     res.sendFile(__dirname + "/dessert.html");
 });
 
-
-app.get("/login2.html", function (req, res) {
-    res.sendFile(__dirname + "/login2.html");
+app.get("/login.html", function (req, res) {
+    res.sendFile(__dirname + "/login.html");
 });
+
+app.get("/cart", function (req, res) {
+
+    var items = []
+    var total = 0
+    var html = ''
+    html += '<body>'
+    html += 'Hello'
+    html += '<ul>'
+    MongoClient.connect(url, function (err, db) {
+        if(err) throw err;
+
+        var dbo = db.db("fooddb")
+
+        dbo.collection("Cart").find().toArray(function(err,result) {
+
+            for(i=0; i<result.length; i++) {
+                if(userName == result[i].userName){
+                    items.push(result[i])
+                    total += result[i].body.price
+                    html += '<li>' + result[i].body.name + " " + result[i].body.price +'</li>'
+                    console.log(result[i].body.name + " " + result[i].body.price)
+                }
+            }
+            console.log(total)
+            html += '</ul>'
+            html += "Total: " + total
+            html += '</body>'
+            // res.sendFile(__dirname + "cart.html")
+            res.send(html)
+            db.close()
+        })
+    })
+
+    
+    // res.sendFile(__dirname + "/cart.html")
+})
 
 var server = app.listen(9000, function () {
     var host = server.address().address
