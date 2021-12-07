@@ -74,7 +74,7 @@ h1{
     padding: 90px 0;
     margin: 20px;
     object-fit: fill;
-    filter: blur(1px);
+    transition: transform .2s; 
     /* border: 1px solid; */
     color: rgb(255, 255, 255);
     font-size: xx-large;
@@ -82,7 +82,7 @@ h1{
     text-align: center;
 }
 #snack_div:hover {
-    filter: none;
+    transform: scale(1.05);
 }
 
 #main_course_div {
@@ -92,12 +92,18 @@ h1{
     margin: 20px;
     color: #fff;
     font-size: xx-large;
+    transition: transform .2s; 
     padding: 5px;
     padding: 90px 0;
     object-fit: contain;
     box-shadow: 5px 5px 5px 5px #d3d2d2;
     text-align: center;
 }
+
+#main_course_div:hover {
+    transform: scale(1.05);
+}
+
 #drinks_div {
     background-image: url("/desert.jfif");
     height: 220px;
@@ -107,9 +113,22 @@ h1{
     padding: 5px;
     margin: 20px;
     color: #fff;
+    transition: transform .2s; 
     padding: 90px 0;
     box-shadow: 5px 5px 5px 5px #d3d2d2;
     text-align: center;
+}
+
+#drinks_div:hover {
+    transform: scale(1.05);
+}
+
+#login{
+    transition: transform .2s; 
+}
+
+#login:hover {
+    transform: scale(1.05);
 }
 
 .special{
@@ -168,8 +187,26 @@ input.ng-invalid.ng-dirty{
     background-color: #ecf4e3;
     outline: none;
     border: none;
-    padding: 7px;
+    padding: 10px;
+    transition: transform .2s;
 }
+
+.buttonz{
+    background-color: #ecf4e3;
+    padding: 10px;
+    border-radius: 2px;
+    transition: transform .2s;
+}
+
+
+.food_button:hover {
+    transform: scale(1.05);
+}
+
+.buttonz:hover {
+    transform: scale(1.05);
+}
+
 
 #formcss{
     border-style: solid;
