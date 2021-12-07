@@ -1,6 +1,7 @@
 var express = require('express');
 const bodyParser = require("body-Parser");
 var MongoClient = require('mongodb').MongoClient
+var ObjectId = require('mongodb').ObjectID;
 var url = 'mongodb://localhost:27017/'
 var app = express();
 app.use(express.static("public"));
@@ -11,12 +12,6 @@ app.use(bodyParser.json());
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/register.html");
 });
-
-
-var alert = require("alert");
-function myFunction() {
-    alert("Hello! I am an alert box!");
-}
 
 var userName = ""
 var userPassword = ""
@@ -39,16 +34,18 @@ app.post("/addtocart",(req,res)=>{
 
 app.post("/removeFromCart",(req,res)=>{
     const body= req.body;
-    console.log(body);
+    console.log(body._id);
 
     MongoClient.connect(url, function(err, db) {
         if(err) throw err;
 
         var dbo = db.db("fooddb")
-        dbo.collection("Cart").remove({_id : body._id},  function(err, result) {
-            console.log("Item Removed to cart")
-            res.sendFile(__dirname + "/cart.html");
+        dbo.collection("Cart").deleteOne({"_id" : ObjectId(body._id)},  function(err, result) {
+            console.log("Deleted Item is " + result._id)
             db.close()
+            console.log("Before Redirect")
+            res.sendFile("/cart.html")
+            console.log("After redirect")
         })
     })
 })
@@ -135,6 +132,7 @@ app.get("/login.html", function (req, res) {
 });
 
 app.get("/cart.html", function (req, res) {
+    console.log("We are here, Get me if u can!")
     res.sendFile(__dirname + "/cart.html");
 });
 
