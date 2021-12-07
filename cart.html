@@ -1,5 +1,80 @@
-<html>
-    <body>
-        <h1>This is Cart</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Cart</title>
+    <script>
+        var items = []
+        var total = 0
+        var http_request = new XMLHttpRequest();
+        http_request.onreadystatechange = function () {
+            if (http_request.readyState == 4) {
+                var result = JSON.parse(http_request.responseText);
+                console.log(result)
+                for (var i = 0; i < result.length; i++) {
+                    items.push(result[i])
+                    total += result[i].body.price;
+                    var l = document.createElement('li');
+                    l.className = "box"
+                    // var t = document.createTextNode(result[i].body.name + "         Rs" + result[i].body.price);
+                    // l.appendChild(t);
+                    //  +/
+                    l.innerHTML = '<img class ="food_image" src="' + result[i].body.image + '">' +
+                            '<div class="inner_box>' +
+                            '<h3 class="food_name">' + result[i].body.name + '</h3>' + '</p>' +
+                            '<span class="food_price"> Price: ' + result[i].body.price + '</span><br><br>' +
+                            '<button class="food_button" onClick=removeFromCart(' + i + ') >REMOVE ITEM</button>' + '</div>';
+                    document.getElementById('cartlist').appendChild(l);
+                }
+                console.log(total);
+                document.getElementById("totalprice").innerHTML = "Total = " + total;
+            }
+        }
+        http_request.open("POST", "http://localhost:9000/cartdetails", true);
+        http_request.send();
+
+        function removeFromCart(idx) {
+            alert("Removed Item")
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:9000/removeFromCart", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(items[idx]));
+        }
+
+        function orderPlace() {
+            alert("Your order has been placed!");
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+           
+    </script>
+    <center>
+        <p id="heading">Your Cart</p>
+        <div id="cartitems">
+            <ul id="cartlist">
+            </ul>
+        </div>
+        <div id="totalprice" style="font-size: 40px;">
+        </div>
+        <br><br>
+    <button class="buttonz" onClick="orderPlace()">PLACE ORDER</button><br><br>
+    </center>
+
+    
+
+</body>
+
 </html>
