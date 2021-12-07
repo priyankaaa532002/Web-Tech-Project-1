@@ -137,7 +137,6 @@ h1{
     z-index: 1004;
 }
 
-
 #order{
     margin-left: 18px;
     font-size: x-large;
@@ -222,4 +221,13 @@ input.ng-invalid.ng-dirty{
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12)
   ;
+}
+
+/* .food_image{
+    width: 150px;
+    height: 150px;
+} */
+
+.food_button{
+display: inline;
 }

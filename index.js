@@ -20,6 +20,7 @@ function myFunction() {
 
 var userName = ""
 var userPassword = ""
+var userAddress = ""
 
 app.post("/addtocart",(req,res)=>{
     const body= req.body;
@@ -29,8 +30,24 @@ app.post("/addtocart",(req,res)=>{
         if(err) throw err;
 
         var dbo = db.db("fooddb")
-        dbo.collection("Cart").insertOne({userName, userPassword, body}, function(err, res) {
+        dbo.collection("Cart").insertOne({userName, userPassword, userAddress, body}, function(err, res) {
             console.log("Item added to cart")
+            db.close()
+        })
+    })
+})
+
+app.post("/removeFromCart",(req,res)=>{
+    const body= req.body;
+    console.log(body);
+
+    MongoClient.connect(url, function(err, db) {
+        if(err) throw err;
+
+        var dbo = db.db("fooddb")
+        dbo.collection("Cart").remove({_id : body._id},  function(err, result) {
+            console.log("Item Removed to cart")
+            res.sendFile(__dirname + "/cart.html");
             db.close()
         })
     })
@@ -39,13 +56,14 @@ app.post("/addtocart",(req,res)=>{
 app.post("/register", function (req, res) {
     var name = req.body.name
     var password = req.body.password
-    userName = name
-    userPassword = password
     var phone = req.body.phone
     var email = req.body.email
     var address = req.body.address
     var pincode = req.body.pincode
 
+    userName = name
+    userPassword = password
+    userAddress = req.body.address
 
     MongoClient.connect(url, function (err, db) {
         if (err) throw err;
@@ -89,6 +107,7 @@ app.post("/login", function (req, res) {
                 } else{
                     userName = result[0].name
                     userPassword = result[0].password
+                    userAddress = result[0].address
                     console.log(result);
                     res.sendFile(__dirname + "/index.html");
                 }
@@ -115,41 +134,23 @@ app.get("/login.html", function (req, res) {
     res.sendFile(__dirname + "/login.html");
 });
 
-app.get("/cart", function (req, res) {
+app.get("/cart.html", function (req, res) {
+    res.sendFile(__dirname + "/cart.html");
+});
 
-    var items = []
-    var total = 0
-    var html = ''
-    html += '<body>'
-    html += 'Hello'
-    html += '<ul>'
+app.get("/index.html", function(req, res) {
+    res.sendFile(__dirname + "/index.html");
+})
+
+app.post("/cartdetails", function (req, res) {
     MongoClient.connect(url, function (err, db) {
         if(err) throw err;
-
         var dbo = db.db("fooddb")
-
-        dbo.collection("Cart").find().toArray(function(err,result) {
-
-            for(i=0; i<result.length; i++) {
-                if(userName == result[i].userName){
-                    items.push(result[i])
-                    total += result[i].body.price
-                    html += '<li>' + result[i].body.name + " " + result[i].body.price +'</li>'
-                    console.log(result[i].body.name + " " + result[i].body.price)
-                }
-            }
-            console.log(total)
-            html += '</ul>'
-            html += "Total: " + total
-            html += '</body>'
-            // res.sendFile(__dirname + "cart.html")
-            res.send(html)
+        dbo.collection("Cart").find({userName: userName}).toArray(function(err,result) {
+            res.status(200).send(result)
             db.close()
         })
-    })
-
-    
-    // res.sendFile(__dirname + "/cart.html")
+    })   
 })
 
 var server = app.listen(9000, function () {
