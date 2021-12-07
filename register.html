@@ -24,7 +24,7 @@
     <center>
         <p id="heading">Foodies Paradise</p>
     </center>
-    <br><br>
+    
     <div id="formcss" style="width:600px; margin:0 auto;">
         <form id="formm" name="form1" ng-app="myApp" ng-controller="validateCtrl" novalidate align="center"
             action="/register" method="post">
@@ -75,8 +75,8 @@
             <P>You can light a little life :)</P>
             Rs 50<input type="radio" name="amount">
             Rs 100<input type="radio" name="amount"><br>
-            <input type="submit" ng-disabled="form1.phone.$invalid || form1.pincode.$invalid"><br><br>
-            Already a member? <input type="button" value="Login Here" onclick="toLogin()"> <br><br>
+            <input type="submit" class="buttonz" ng-disabled="form1.phone.$invalid || form1.pincode.$invalid"><br><br>
+            Already a member? <input class="buttonz" type="button" value="Login Here" onclick="toLogin()"> <br><br>
         </form>
     </div>
     <br><br>
