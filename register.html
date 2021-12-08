@@ -15,16 +15,17 @@
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/style.css">
     <script>
-            function toLogin() {
+        function toLogin() {
             window.location.href = "login.html";
         }
     </script>
 </head>
+
 <body>
     <center>
         <p id="heading">Foodies Paradise</p>
     </center>
-    
+
     <div id="formcss" style="width:600px; margin:0 auto;">
         <form id="formm" name="form1" ng-app="myApp" ng-controller="validateCtrl" novalidate align="center"
             action="/register" method="post">
@@ -50,29 +51,24 @@
                 </span>
             </p> <br>
             <p>Your Email(required)<br>
-                <input type="email" name="email" ng-model="email" ng-pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" required>
+                <input type="email" name="email" ng-model="email"
+                    ng-pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" required>
                 <span style="color:red" ng-show="form1.email.$dirty && form1.email.$invalid">
                     <span ng-show="form1.email.$error.required">This field is required</span>
                     <span ng-show="form1.email.$error.pattern">Invalid Email</span>
                 </span>
             </p> <br>
-            <p>address(required)<br><input type="text" name="address" ng-model="address"
-                    required>
+            <p>address(required)<br><input type="text" name="address" ng-model="address" required>
                 <span style="color:red" ng-show="form1.address.$dirty && form1.address.$invalid">
                     <span ng-show="form1.address.$error.required">This field is required</span>
                 </span>
             </p> <br>
-            <p>Pin Code<br><input type="text" name="pincode" ng-model="pincode"
-                    ng-pattern="/^\d{6}$/">
+            <p>Pin Code<br><input type="text" name="pincode" ng-model="pincode" ng-pattern="/^\d{6}$/">
                 <span style="color:red" ng-show="form1.pincode.$dirty && 
             form1.pincode.$invalid">
                     <span ng-show="form1.pincode.$error.pattern">Invalid pincode</span>
                 </span>
-            </p><br><br>
-            <p style="color:#32502E ;">CONTRIBUTE FOR DONATION</p><br>
-            <P>You can light a little life :)</P>
-            Rs 50<input type="radio" name="amount">
-            Rs 100<input type="radio" name="amount"><br>
+            </p><br>
             <input type="submit" class="buttonz" ng-disabled="form1.phone.$invalid || form1.pincode.$invalid"><br><br>
             Already a member? <input class="buttonz" type="button" value="Login Here" onclick="toLogin()"> <br><br>
         </form>
