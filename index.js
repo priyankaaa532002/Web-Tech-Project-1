@@ -17,35 +17,31 @@ var userName = ""
 var userPassword = ""
 var userAddress = ""
 
-app.post("/addtocart",(req,res)=>{
-    const body= req.body;
+app.post("/addtocart", (req, res) => {
+    const body = req.body;
     console.log(body);
 
-    MongoClient.connect(url, function(err, db) {
-        if(err) throw err;
+    MongoClient.connect(url, function (err, db) {
+        if (err) throw err;
 
         var dbo = db.db("fooddb")
-        dbo.collection("Cart").insertOne({userName, userPassword, userAddress, body}, function(err, res) {
+        dbo.collection("Cart").insertOne({ userName, userPassword, userAddress, body }, function (err, res) {
             console.log("Item added to cart")
             db.close()
         })
     })
 })
 
-app.post("/removeFromCart",(req,res)=>{
-    const body= req.body;
-    console.log(body._id);
+app.post("/removeFromCart", (req, res) => {
+    const body = req.body;
 
-    MongoClient.connect(url, function(err, db) {
-        if(err) throw err;
+    MongoClient.connect(url, function (err, db) {
+        if (err) throw err;
 
         var dbo = db.db("fooddb")
-        dbo.collection("Cart").deleteOne({"_id" : ObjectId(body._id)},  function(err, result) {
-            console.log("Deleted Item is " + result._id)
+        dbo.collection("Cart").deleteOne({ "_id": ObjectId(body._id) }, function (err, result) {
+            console.log(body._id + " Deleted.")
             db.close()
-            console.log("Before Redirect")
-            res.sendFile("/cart.html")
-            console.log("After redirect")
         })
     })
 })
@@ -64,7 +60,6 @@ app.post("/register", function (req, res) {
 
     MongoClient.connect(url, function (err, db) {
         if (err) throw err;
-        console.log("Connected to Database");
         var dbo = db.db("fooddb");
         var r = {
             name,
@@ -76,7 +71,7 @@ app.post("/register", function (req, res) {
         }
         dbo.collection('User').insertOne(r, function (err, res) {
             if (err) throw err;
-            console.log(res);
+            console.log(res + "\n inserted to Database!");
             db.close()
         });
     });
@@ -86,22 +81,22 @@ app.post("/register", function (req, res) {
 
 app.post("/login", function (req, res) {
 
-    MongoClient.connect(url, function(err, db) {
+    MongoClient.connect(url, function (err, db) {
         if (err) throw err;
         console.log("Connected to Database");
         var dbo = db.db("fooddb");
-        var find = {name: req.body.name}
+        var find = { name: req.body.name }
 
-        dbo.collection("User").find(find).toArray(function(err, result) {
+        dbo.collection("User").find(find).toArray(function (err, result) {
             if (err) throw err;
-            if(result.length == 0) {
+            if (result.length == 0) {
                 console.log("You are not an existing user")
                 res.send("Not a user")
             } else {
-                if(result[0].password != req.body.password) {
+                if (result[0].password != req.body.password) {
                     console.log("Wrong Password")
-                
-                } else{
+
+                } else {
                     userName = result[0].name
                     userPassword = result[0].password
                     userAddress = result[0].address
@@ -132,27 +127,26 @@ app.get("/login.html", function (req, res) {
 });
 
 app.get("/cart.html", function (req, res) {
-    console.log("We are here, Get me if u can!")
     res.sendFile(__dirname + "/cart.html");
 });
 
-app.get("/index.html", function(req, res) {
+app.get("/index.html", function (req, res) {
     res.sendFile(__dirname + "/index.html");
 })
 
 app.post("/cartdetails", function (req, res) {
     MongoClient.connect(url, function (err, db) {
-        if(err) throw err;
+        if (err) throw err;
         var dbo = db.db("fooddb")
-        dbo.collection("Cart").find({userName: userName}).toArray(function(err,result) {
+        dbo.collection("Cart").find({ userName: userName }).toArray(function (err, result) {
             res.status(200).send(result)
             db.close()
         })
-    })   
+    })
 })
 
 var server = app.listen(9000, function () {
     var host = server.address().address
     var port = server.address().port
-    console.log("Example app listening at %s:%s Port", host, port)
+    console.log("Foody Paradise listening at %s:%s Port", host, port)
 });

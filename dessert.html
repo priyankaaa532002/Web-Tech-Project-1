@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DESSERT</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap" rel="stylesheet">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap"
+        rel="stylesheet">
 
     <script type="text/javascript">
         var arrayOfItem = []
@@ -23,8 +24,8 @@
                         var div = document.createElement('div');
                         div.className = 'box';
                         div.innerHTML = '<img class ="food_image" src="' + obj[i].image + '">' +
-                        '<div class="inner_box>' +
-                            '<h3 class="food_name">' + obj[i].name + '</h3>' +'</p>' + 
+                            '<div class="inner_box>' +
+                            '<h3 class="food_name">' + obj[i].name + '</h3>' + '</p>' +
                             '<p class="food_rating"> <br>Rating : ' + obj[i].rating + '</p>' +
                             '<span class="food_price"> Price: ' + obj[i].price + '</span><br><br>' +
                             '<button class="food_button" onClick=addToCart(' + i + ') >Add to cart</button>' + '</div>';
@@ -49,7 +50,7 @@
 </head>
 
 <body onload="showdessert()">
-    <p  class="menu_heading">Desserts</p>
+    <p class="menu_heading">Desserts</p>
     <div class="box-container" id="dessert" align="center">
     </div>
 </body>
